@@ -1,52 +1,67 @@
+// GAME NOT WORKING - NEED TO DEBUG!!!!!!!!!! 
+//------------------ VARIABLES ---------------------------
+
+
+let isRanNumGenerated = false;
+let attempts = 0;
+let ranNum 
+
 // ---------------- FUNCTIONS ---------------------------
 
 // generate random number
     function genRanNum() {
-    ranNum = Math.floor(Math.random() * 100 + 1);
+        //add a check to see if the random number has already been generated - sets a flag to true if it has
+        if (!isRanNumGenerated) {
+            ranNum = Math.floor(Math.random() * 99 + 1);
+            isRanNumGenerated = true;
+        }
 }
+
 //display number once user has guessed
-function displayNumber() {
-    document.getElementById('displayNumber').innerHTML = ranNum;
+    function displayNumber() {
+        document.getElementById('displayNumber').innerHTML = ranNum;
 }
   
 //take users guess
-  function submitGuess() {
-    let guess = document.getElementById('userGuess').value;
-    //console.log(guess);
+    function submitGuess() {
+        let guess = document.getElementById('userGuess').value;
+//console.log(guess);
   
-    // Check if the input is a valid number
+// Check if the input is a valid number
     if (isNaN(guess) || guess < 1 || guess > 100) {
         document.getElementById('resultText').innerHTML = "Please enter a valid number between 1 and 100.";
         return;
     }
-    //increment number of attempts?
+//increment number of attempts?
     attempts++; 
   
-    // Compare the user's guess with the random number
+// Compare the user's guess with the random number
         
-        if (userGuess === randomNumber) {
-            document.getElementById('resultText').innerHTML = "Congratulations! You guessed the correct number " + ranNum +  " in " + attempts + "attempts.";
-            function displayNumber()
-        } else if (userGuess > randomNumber) {
-            document.getElementById('resultText').innerHTML = "Too high! Try again.";
-        } else {
-            document.getElementById('resultText').innerHTML = "Too low! Try again.";
-        }
+    if (guess === ranNum) {
+        document.getElementById('resultText').innerHTML = "Congratulations! You guessed the correct number" + ranNum +  " in " + attempts + "attempts.";
+        displayNumber()
+    } else if (guess > ranNum) {
+        document.getElementById('resultText').innerHTML = "Too high! Try lower...";
+    } else {
+        document.getElementById('resultText').innerHTML = "Too low! Try higher...";
+    }
   }
   
   // ---------------- MAIN PROCESSING ---------------------
-  
-// Initialize attempts
-let attempts = 0;
 
-// Add event listener to the submit button
-//document.getElementById('submitGuess').addEventListener('click', submitGuess);
-
-// Generate a random number
+// Generate random number
 genRanNum();
 
-// Display the random number
 
-// Get users guess
+  // Add event listener to the submit button? IN HTML ALREADY...
+//document.getElementById('submitGuess').addEventListener('click', submitGuess);
+
+
+// ---------------------- NOTES -----------------------------
+// 1. The random number should be generated only once, when the page is loaded. 
+// 2. The random number should be displayed only after the user has guessed it.
+
+// GAME NOT WORKING - NEED TO DEBUG!!!!!!!!!! 
+
 
 
