@@ -1,3 +1,16 @@
-body{
-    background-color: blue;
-}
+body {
+    background: darkslategrey;
+    color: #fcbe24;
+    text-align: center;
+    font-family:'Roboto', sans-serif;
+  }
+  
+  .numberBox {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background-color: beige;
+    font-size: large;
+    justify-content: center;
+   }
