@@ -26,20 +26,13 @@
       <p>Please enter your guess below</p>
     
         <!--Form for user to submit their guess-->
-      <form action="">
-        <input
-          type="number"
-          id="userGuess"
-          placeholder="Enter your guess"
-          min="1"
-          max="100"
-        />
-        <!--Submit button for user to submit their guess-->
-        <button onclick="submitGuess()">GUESS!</button>
+      <form id="guessForm" onsubmit="submitGuess(event)">
+          <input type="text" id="userGuess">
+          <button type="submit" id="submitGuess">Submit Guess</button>
+      </form>
 
-        <!--Result text box - displays whether correct, higher or lower-->
-        <h2 id="resultText">RESULT TEXT</h2>
-        </form>
+      <!--Result text box - displays whether correct, higher or lower-->
+      <h2 id="resultText"></h2>
     </div>
 
     <script src="assets/javascript/script.js"></script>
