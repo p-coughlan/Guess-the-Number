@@ -1,6 +1,11 @@
+// GAME NOT WORKING - NEED TO DEBUG!!!!!!!!!! 
+
+// ---------------- VARIABLES ---------------------
 let isRanNumGenerated = false;
 let ranNum;
 let attempts = 0;
+
+// ---------------- FUNCTIONS ---------------------
 
 // Generate random number
 function genRanNum() {
@@ -11,7 +16,7 @@ function genRanNum() {
     }
 }
 
-// Display number once user has guessed
+// Display number once user has guessed correctly
 function displayNumber() {
     document.getElementById('displayNumber').innerHTML = ranNum;
 }
@@ -45,7 +50,7 @@ function submitGuess(event) {
     }
 
     // Reset the input field
-    document.getElementById('userGuess').value = "";
+    
 }
   
   // ---------------- MAIN PROCESSING ---------------------
@@ -53,23 +58,17 @@ function submitGuess(event) {
 // Generate random number
 genRanNum();
 
-
-  // Add event listener to the submit button? IN HTML ALREADY...
-  //document.getElementById('submitGuess').addEventListener('click', submitGuess);
-
-
 // ---------------------- NOTES -----------------------------
 // 1. The random number should be generated only once, when the page is loaded. 
 // 2. The random number should be displayed only after the user has guessed it.
 
-// GAME NOT WORKING - NEED TO DEBUG!!!!!!!!!! 
 
 //LEARNT: 
 //ParseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).
 //isNAN() function determines whether a value is NaN or not
 //!isNAN() - means if it is not a number
 //adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has
-//
+
 
 
 
