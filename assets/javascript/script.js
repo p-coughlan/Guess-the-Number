@@ -92,6 +92,7 @@ genRanNum();
 // 2. The random number should be displayed only after the user has guessed it.
 // 3. There should be a means of resetting the game, so that the user can play again.
 // 4. When the high/low message is displayed, it is not clear that a new guess has been submiited (no change in innerHTML). Use an animation / colour change?
+// 5. Game could reset automatically after a certain time period
 
 
 //LEARNT: 
