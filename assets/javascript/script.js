@@ -4,7 +4,7 @@
 let isRanNumGenerated = false;
 let ranNum;
 let attempts = 0;
-let guess //??
+let guess //do I need to declare this here?
 
 addEventListener('submit', submitGuess); //submitGuess is the function that is called when the form is submitted
 
@@ -46,7 +46,7 @@ try {
 
     // Compare the user's guess with the random number
     if (guess === ranNum) {
-        document.getElementById('resultText').innerHTML = "Congratulations! You guessed the correct number " + ranNum + " in " + attempts + " attempts.";
+        document.getElementById('resultText').innerHTML = "Congratulations!<br>You guessed the correct number " + ranNum + " in " + attempts + " attempts.";
         displayNumber();
     } else if (guess > ranNum) {
         document.getElementById('resultText').innerHTML = "Too high! Try lower...";
@@ -59,7 +59,17 @@ try {
 } catch (error) {
     console.error("Error:", error); // Debugging
 }
-    
+
+  // Trigger fade-in animation
+  triggerFadeIn();
+}
+
+// Function to trigger fade-in animation
+function triggerFadeIn() {
+    const resultText = document.getElementById('resultText');
+    resultText.style.animation = 'none'; // Reset animation
+    resultText.offsetHeight; // Trigger reflow
+    resultText.style.animation = 'fadeIn 2s ease-in-out'; // Re-apply animation
 }
   
   // ---------------- MAIN PROCESSING ---------------------
@@ -70,13 +80,15 @@ genRanNum();
 // ---------------------- NOTES -----------------------------
 // 1. The random number should be generated only once, when the page is loaded. 
 // 2. The random number should be displayed only after the user has guessed it.
+// 3. There should be a means of resetting the game, so that the user can play again.
+// 4. When the high/low message is displayed, it is not clear that a new guess has been submiited (no change in innerHTML). Use an animation / colour change?
 
 
 //LEARNT: 
 //ParseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).
 //isNAN() function determines whether a value is NaN or not
 //!isNAN() - means if it is not a number
-//adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has
+//adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has. How could I use checks elsewhere?
 
 
 

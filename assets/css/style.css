@@ -3,7 +3,25 @@ body {
     color: #fcbe24;
     text-align: center;
     font-family:'Roboto', sans-serif;
-    
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .container {
+    width: 70%;
+    max-width: 600px;
   }
   
   .numberBox {
@@ -14,5 +32,10 @@ body {
     background-color: beige;
     font-size: large;
     justify-content: center;
-    
+    border: 1px solid #fcbe24;
+    border-radius: 5px;
    }
+
+  #resultText {
+    /* initial state without animation */
+  }
