@@ -47,14 +47,15 @@ body {
   
   .numberBox {
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
     margin: auto;
     background-color: cornsilk;
     font-size: large;
     justify-content: center;
+    align-items: center;
     border: 1px solid #fcbe24;
-    border-radius: 5px;
     color: darkslategrey;
    }
 
