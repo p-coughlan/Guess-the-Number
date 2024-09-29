@@ -4,6 +4,10 @@
 let isRanNumGenerated = false;
 let ranNum;
 let attempts = 0;
+let guess //??
+
+addEventListener('submit', submitGuess); //submitGuess is the function that is called when the form is submitted
+
 
 // ---------------- FUNCTIONS ---------------------
 
@@ -23,6 +27,7 @@ function displayNumber() {
 
 // Take user's guess
 function submitGuess(event) {
+try {
     // Prevent the form from submitting
     event.preventDefault();
 
@@ -50,6 +55,10 @@ function submitGuess(event) {
     }
 
     // Reset the input field
+    document.getElementById('userGuess').value = "";
+} catch (error) {
+    console.error("Error:", error); // Debugging
+}
     
 }
   
@@ -68,7 +77,6 @@ genRanNum();
 //isNAN() function determines whether a value is NaN or not
 //!isNAN() - means if it is not a number
 //adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has
-
 
 
 
