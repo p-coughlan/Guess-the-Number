@@ -1,5 +1,3 @@
-// GAME NOT WORKING - NEED TO DEBUG!!!!!!!!!! 
-
 // ---------------- VARIABLES ---------------------
 let isRanNumGenerated = false;
 let ranNum;
@@ -7,7 +5,7 @@ let attempts = 0;
 let guess //do I need to declare this here?
 
 addEventListener('submit', submitGuess); //submitGuess is the function that is called when the form is submitted
-
+//addEventListener('click', resetGame); //resetGame resets the game to its initial state
 
 // ---------------- FUNCTIONS ---------------------
 
@@ -70,6 +68,17 @@ function triggerFadeIn() {
     resultText.style.animation = 'none'; // Reset animation
     resultText.offsetHeight; // Trigger reflow
     resultText.style.animation = 'fadeIn 2s ease-in-out'; // Re-apply animation
+}
+
+// Function to reset the game
+function resetGame() {
+    isRanNumGenerated = false;
+    ranNum = null;
+    attempts = 0;
+    document.getElementById('resultText').innerHTML = "";
+    document.getElementById('displayNumber').innerHTML = "";
+    document.getElementById('userGuess').value = "";
+    genRanNum(); // Generate a new random number
 }
   
   // ---------------- MAIN PROCESSING ---------------------
