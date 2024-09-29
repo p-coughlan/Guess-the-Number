@@ -5,7 +5,6 @@ let attempts = 0;
 let guess //do I need to declare this here?
 
 addEventListener('submit', submitGuess); //submitGuess is the function that is called when the form is submitted
-//addEventListener('click', resetGame); //resetGame resets the game to its initial state
 
 // ---------------- FUNCTIONS ---------------------
 
@@ -72,19 +71,21 @@ function triggerFadeIn() {
 
 // Function to reset the game
 function resetGame() {
-    isRanNumGenerated = false;
-    ranNum = null;
-    attempts = 0;
-    document.getElementById('resultText').innerHTML = "";
-    document.getElementById('displayNumber').innerHTML = "";
-    document.getElementById('userGuess').value = "";
+    isRanNumGenerated = false; // Reset the flag
+    ranNum = null; // Reset the random number
+    attempts = 0; // Reset the number of attempts
+    document.getElementById('resultText').innerHTML = ""; // Clear the result text
+    document.getElementById('displayNumber').innerHTML = "?"; // Hide the random number
+    document.getElementById('userGuess').value = ""; // Clear the input field
     genRanNum(); // Generate a new random number
 }
   
-  // ---------------- MAIN PROCESSING ---------------------
+  // ---------------- MAIN PROCESSING ----------------------
 
 // Generate random number
 genRanNum();
+
+// ------------------ END OF PROCESSING --------------------
 
 // ---------------------- NOTES -----------------------------
 // 1. The random number should be generated only once, when the page is loaded. 
@@ -98,6 +99,3 @@ genRanNum();
 //isNAN() function determines whether a value is NaN or not
 //!isNAN() - means if it is not a number
 //adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has. How could I use checks elsewhere?
-
-
-

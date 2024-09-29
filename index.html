@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Guess the Number</title>
   </head>
 
   <body>
@@ -13,8 +14,10 @@
 
       <h1>GUESS THE NUMBER!</h1>
       <h2>
-        The computer will generate a random number between 1 and 100. The
-        computer will guide you higher or lower! How many tries will it take
+        A random number between 1 and 100 will be generated. The
+        computer will guide you higher or lower!
+        <br>
+        How many attempts will it take
         you?
       </h2>
 
@@ -27,7 +30,7 @@
     
         <!--Form for user to submit their guess-->
       <form id="guessForm">
-          <input type="text" id="userGuess">
+          <input type="text" id="userGuess" placeholder="enter number">
           <button type="submit" id="submitGuess">Submit Guess</button>
       </form>
 
