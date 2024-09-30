@@ -2,7 +2,7 @@
 let isRanNumGenerated = false;
 let ranNum;
 let attempts = 0;
-let guess //do I need to declare this here?
+let guess
 
 addEventListener('submit', submitGuess); //submitGuess is the function that is called when the form is submitted
 
@@ -65,7 +65,7 @@ try {
 function triggerFadeIn() {
     const resultText = document.getElementById('resultText');
     resultText.style.animation = 'none'; // Reset animation
-    resultText.offsetHeight; // Trigger reflow
+    resultText.offsetHeight; // Trigger reflow 
     resultText.style.animation = 'fadeIn 2s ease-in-out'; // Re-apply animation
 }
 
@@ -97,6 +97,5 @@ genRanNum();
 
 //LEARNT: 
 //ParseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).
-//isNAN() function determines whether a value is NaN or not
-//!isNAN() - means if it is not a number
+//isNAN() function determines whether a value is NaN or not.
 //adding a check to see if the random number has already been generated - using a boolean flag to set it to true if it has. How could I use checks elsewhere?
